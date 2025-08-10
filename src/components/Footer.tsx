@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                <a href="https://infernoverse.vercel.app/contact" className="text-gray-400 hover:text-cyan-400 transition-colors">
                   Support
                 </a>
               </li>
@@ -49,10 +49,9 @@ const Footer: React.FC = () => {
             <h4 className="text-cyan-400 font-semibold">Connect</h4>
             <div className="flex space-x-4">
               {[
-                { icon: Github, href: '#' },
-                { icon: Twitter, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Mail, href: '#' }
+
+                { icon: Linkedin, href: 'https://www.linkedin.com/company/inferno-org/' },
+                { icon: Instagram, href: 'https://www.instagram.com/infernoofficial8?igsh=dXdhcWh0cjJlMTB4' }
               ].map((social, index) => (
                 <motion.a
                   key={index}

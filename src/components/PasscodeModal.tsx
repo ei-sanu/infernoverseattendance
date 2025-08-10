@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from 'framer-motion';
+import { Lock, X } from 'lucide-react';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Lock } from 'lucide-react';
 
 interface PasscodeModalProps {
   isOpen: boolean;
@@ -16,7 +16,7 @@ const PasscodeModal: React.FC<PasscodeModalProps> = ({ isOpen, onClose, onSubmit
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const correctPasscode = type === 'participant' ? 'PIV2025' : 'VS2025';
-    
+
     if (passcode === correctPasscode) {
       onSubmit(passcode);
       setPasscode('');
@@ -54,19 +54,17 @@ const PasscodeModal: React.FC<PasscodeModalProps> = ({ isOpen, onClose, onSubmit
 
             {/* Icon */}
             <div className="flex items-center justify-center mb-6">
-              <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${
-                type === 'participant' 
-                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600' 
+              <div className={`w-16 h-16 rounded-xl flex items-center justify-center ${type === 'participant'
+                  ? 'bg-gradient-to-r from-cyan-600 to-blue-600'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600'
-              }`}>
+                }`}>
                 <Lock className="w-8 h-8 text-white" />
               </div>
             </div>
 
             {/* Title */}
-            <h2 className={`text-2xl font-bold text-center mb-2 ${
-              type === 'participant' ? 'text-cyan-400' : 'text-blue-400'
-            }`}>
+            <h2 className={`text-2xl font-bold text-center mb-2 ${type === 'participant' ? 'text-cyan-400' : 'text-blue-400'
+              }`}>
               {type === 'participant' ? 'Participant' : 'Volunteer'} Access
             </h2>
             <p className="text-gray-400 text-center mb-6">
@@ -100,18 +98,17 @@ const PasscodeModal: React.FC<PasscodeModalProps> = ({ isOpen, onClose, onSubmit
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full py-3 rounded-lg text-white font-semibold transition-all duration-300 ${
-                  type === 'participant'
+                className={`w-full py-3 rounded-lg text-white font-semibold transition-all duration-300 ${type === 'participant'
                     ? 'bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500'
                     : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500'
-                }`}
+                  }`}
               >
                 Continue
               </motion.button>
             </form>
 
             <p className="text-gray-500 text-xs text-center mt-4">
-              Passcode: {type === 'participant' ? 'PIV2025' : 'VS2025'}
+              {type === 'participant' ? 'Passcode: PIV2025' : 'Passcode: Ask Platform Developer for the Passcode'}
             </p>
           </motion.div>
         </motion.div>
