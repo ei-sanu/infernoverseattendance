@@ -37,6 +37,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                {/* contact info */}
                 <a href="https://infernoverse.vercel.app/contact" className="text-gray-400 hover:text-cyan-400 transition-colors">
                   Support
                 </a>
