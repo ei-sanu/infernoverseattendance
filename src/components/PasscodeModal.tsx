@@ -15,7 +15,7 @@ const PasscodeModal: React.FC<PasscodeModalProps> = ({ isOpen, onClose, onSubmit
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const correctPasscode = type === 'participant' ? 'PIV2025' : 'VS2025';
+    const correctPasscode = type === 'participant' ? 'PIV2025' : 'INVE500';
 
     if (passcode === correctPasscode) {
       onSubmit(passcode);
